@@ -1,0 +1,48 @@
+/* FONTS */
+@font-face {
+    font-family: "GrandGalaxy";
+    src: url("../fonts/GrandGalaxy.otf");
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff4301;
+}
+
+img {
+    width: 80px;
+    height: 90px;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+    border-radius: 3px;
+    align-content: center;
+}
+
+span {
+    background-color: #ff4301;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding: 5px 12px;
+    border-radius: 3px;
+    width: 140px;
+}
+
+h1 {
+    font-family: "GrandGalaxy";
+    text-align: center;
+    color: black;
+    margin: 2px;
+    padding-top: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
