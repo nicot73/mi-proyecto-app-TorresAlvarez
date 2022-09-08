@@ -1,49 +1,37 @@
+/* CSS - Texto con Degradado */
+.fluido {
+    animation: fluido 4s ease-in-out infinite;
+    background: linear-gradient(-45deg, #7e0c0c, #CD1818, #E45826, #FF6701, #FA7D09, #FF8C32);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+@keyframes fluido {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+}
+
 /* FONTS */
 @font-face {
     font-family: "GrandGalaxy";
     src: url("../fonts/GrandGalaxy.otf");
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ff4301;
-}
-
 img {
-    width: 60px;
-    height: 60px;
-    padding: 10px;
-}
-
-nav {
-    background-color: black;
-    padding: 15px;
-    border-radius: 3px;
-    align-content: center;
-}
-
-span {
-    background-color: grey;
-    margin-left: 5px;
-    margin-bottom: 5px;
-    padding: 5px 12px;
-    border-radius: 3px;
-    width: 140px;
-}
+    width: 50px;
+    padding-left: 15px;
+}   
 
 h1 {
     font-family: "GrandGalaxy";
-    text-align: center;
-    color: black;
-    margin: 2px;
-    padding-top: 4px;
-    padding-left: 12px;
-    padding-right: 12px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
+    font-size: 1.6rem;
 }
