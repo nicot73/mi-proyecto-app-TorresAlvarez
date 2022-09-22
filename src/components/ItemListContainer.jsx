@@ -1,36 +1,42 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
-import ItemCount from './ItemCount';
-import { products } from '../assets/products';
-import { customFetch } from '../utils/customFetch';
+import Loader from './Loader';
 import styled from 'styled-components';
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({ greeting }) => {
 
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] =useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    customFetch(products)
-      .then(res => {
+
+    const getItem = async () => {
+
+      try {
+        const res = await fetch('https://fakestoreapi.com/products/category/electronics');
+        const data = await res.json();
+        setListProducts(data);
+      }
+      catch(err) {
+        console.log("Error:", err);
+        console.error("Error:", err);
+      }
+      finally {
         setLoading(false);
-        setListProducts(res);
-      })
+      }
+    }
+
+    getItem();
+
   },[])
-
-
 
   return (
     <DivContainer>
       <div className='msj'>{greeting}</div>
-      {loading ? "CARGANDO..." : <ItemList listProducts={listProducts}/>}
-      
-      <ItemCount initial={1} stock={10} onAdd={() => {}}/>
-    </DivContainer>
 
-    
+      {loading ? <Loader/> : <ItemList listProducts={listProducts}/>}
+    </DivContainer>
   )
 }
 
