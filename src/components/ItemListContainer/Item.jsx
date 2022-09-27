@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Item = ({ product }) => {
-    console.log(product)
+
   return (
       <CardContainer>
           <img src={product.image} alt="img" />
           <h3>{product.title}</h3>
           <p>Precio: ${product.price}</p>
-          <a href='#'>Ver Detalles</a>  
+          <NavLink to={`/product/${product.id}`}>Ver Detalles</NavLink>
       </CardContainer> 
   )
 }
@@ -31,7 +32,7 @@ const CardContainer = styled.div`
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
   }
   img {
-    width: 330px;
+    width: 300px;
     height: 220px;
   }
   h3 {

@@ -6,14 +6,14 @@ const ItemDetail = ({ listProduct }) => {
   return (
     <Container>
       <div className='divContainer'>
-        <h3>{listProduct.category}</h3>
+        <h3>{listProduct.category.toUpperCase()}</h3>
         <img src={listProduct.image} alt="img" />
       </div>
       <div className='divContainer'>
         <h4>{listProduct.title}</h4>
         <p>{listProduct.description}</p>
-        <ItemCount initial={1} stock={10} onAdd={() => {}}/>
-        <p className='price'>Precio: ${listProduct.price}</p>  
+        <p className='price'>Precio: ${listProduct.price}</p>
+        <ItemCount initial={1} stock={10} onAdd={() => {}}/>  
       </div> 
     </Container>
     

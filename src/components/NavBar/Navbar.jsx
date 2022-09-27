@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import logo from '../assets/logo.svg';
-import BurgerButton from './BurgerButton';
-import CartWidget from './CartWidget';
+import { NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
+import BurgerButton from '../BurguerButton/BurgerButton';
+import CartWidget from '../Cart/CartWidget';
 import './Header.css';
 
 const Navbar = () => {
@@ -16,15 +17,19 @@ const Navbar = () => {
     return (
         <>
             <NavContainer>
-                <img src={logo} alt="logotype" />
+                <NavLink to={'/'}><img src={logo} alt="logotype"/></NavLink>
                 <h1 className='fluido'>Tienda Gamer</h1>
                 <div className={`links ${clicked ? 'active' : ''}`}>
-                    <a onClick={handleClick} href="#">HOME</a>
-                    <a onClick={handleClick} href="#">PRODUCTOS</a>
-                    <a onClick={handleClick} href="#">NOSOTROS</a>
-                    <a onClick={handleClick} href="#">CONTACTO</a>
+                    <NavLink to={"/category/hardware"}>HARDWARE</NavLink>
+                    <NavLink to={"/category/perifericos"}>PERIFERICOS</NavLink>
+                    <NavLink to={"/category/notebooks"}>NOTEBOOKS</NavLink>
+                    <NavLink to={"/category/pc-armadas"}>PC ARMADAS</NavLink>
                 </div>
-                <CartWidget />
+
+                <NavLink to={'/cart'}>
+                    <CartWidget />
+                </NavLink>
+                
                 <div className='burger'>
                     <BurgerButton clicked={clicked} handleClick={handleClick}/>
                 </div>
