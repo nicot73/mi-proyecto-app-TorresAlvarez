@@ -20,10 +20,10 @@ const Navbar = () => {
                 <NavLink to={'/'}><img src={logo} alt="logotype"/></NavLink>
                 <h1 className='fluido'>Tienda Gamer</h1>
                 <div className={`links ${clicked ? 'active' : ''}`}>
-                    <NavLink to={"/category/hardware"}>HARDWARE</NavLink>
-                    <NavLink to={"/category/perifericos"}>PERIFERICOS</NavLink>
-                    <NavLink to={"/category/notebooks"}>NOTEBOOKS</NavLink>
-                    <NavLink to={"/category/pc-armadas"}>PC ARMADAS</NavLink>
+                    <NavLink onClick={handleClick} to={'/category/hardware'}>HARDWARE</NavLink>
+                    <NavLink onClick={handleClick} to={'/category/perifericos'}>PERIFERICOS</NavLink>
+                    <NavLink onClick={handleClick} to={'/category/notebooks'}>NOTEBOOKS</NavLink>
+                    <NavLink onClick={handleClick} to={'/category/pc-armada'}>PC ARMADAS</NavLink>
                 </div>
 
                 <NavLink to={'/cart'}>
@@ -43,7 +43,7 @@ export default Navbar;
 
 const NavContainer = styled.nav`
     padding: .2rem;
-    background-color: #333;
+    background-color: #222;
     color: #FF6701;
     display: flex;
     align-items: center;
@@ -52,6 +52,20 @@ const NavContainer = styled.nav`
         text-decoration: none;
         color: #FF6701;
         margin-right: 1rem;
+    }
+    h1 {
+        text-align: center;
+    }
+    @media (min-width: 769px) {
+        div {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        div :nth-child(1) {
+            margin-left: 1rem;
+        }
     }
     .links {
         position: absolute;
@@ -77,20 +91,22 @@ const NavContainer = styled.nav`
             }
         }
     }
-    .links.active{
-        width: 100%;
-        display: block;
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        top: 12%;
-        left: 0;
-        right:0;
-        text-align: center;
-        a{
-            font-size: 1.5rem;
-            color: #FF6701;
-            margin-top: 2.2rem;
+    @media(max-width: 768px) {
+        .links.active{
+            width: 100%;
+            display: block;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 12%;
+            left: 0;
+            right:0;
+            text-align: center;
+            a{
+                font-size: 1.5rem;
+                color: #FF6701;
+                margin-top: 2.2rem;
+            }
         }
     }
     .burger {
@@ -101,17 +117,19 @@ const NavContainer = styled.nav`
 `
 
 const BgDiv = styled.div`
-    background-color: #222;
-    position: absolute;
+    background: #333;
+    position: fixed;
     top: -800px;
     width: 0;
     height: 100%;
     z-index:-1;
     transition: all .6s ease;
-    &.active {
-        border-radius: 0 0 10% 10%;
-        top: 0;
-        width: 100%;
-        height: 50%;
-    } 
+    @media(max-width: 768px) {
+        &.active {
+            border-radius: 0 0 10% 10%;
+            top: 0;
+            width: 100%;
+            height: 50%;
+        } 
+    }
 `

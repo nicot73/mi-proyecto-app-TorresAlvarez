@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from './ItemCount';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const ItemDetail = ({ listProduct }) => {
+
+  const [isAdded, setIsAdded] = useState(false);
+  
+  const onAdd = () => {
+    setIsAdded(true);
+  }
+
   return (
     <Container>
       <div className='divContainer'>
@@ -13,7 +21,7 @@ const ItemDetail = ({ listProduct }) => {
         <h4>{listProduct.title}</h4>
         <p>{listProduct.description}</p>
         <p className='price'>Precio: ${listProduct.price}</p>
-        <ItemCount initial={1} stock={10} onAdd={() => {}}/>  
+        {isAdded ? <NavLink to='/cart'><button>Ir al Carrito</button></NavLink> : <ItemCount initial={1} stock={10} onAdd={onAdd}/>}  
       </div> 
     </Container>
     
@@ -52,5 +60,21 @@ const Container = styled.div`
   }
   .price {
     font-size: 20px;
+  }
+
+  button {
+    background-color: #333;
+    color: #FF6701;
+    border: none;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-family: 'Montserrat';
+    font-size: 15px;
+  }
+  button:hover {
+    background-color: #FF6701;
+    color: #333;
   }
 `
