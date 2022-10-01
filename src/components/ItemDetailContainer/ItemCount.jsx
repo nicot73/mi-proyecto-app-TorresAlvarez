@@ -8,12 +8,13 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     const increase = () => count < stock && setCount(count + 1);
     const decrease = () => count > initial && setCount(count - 1);
 
+
   return (
     <ItemContainer>
       <button onClick={decrease}>-</button>
       <p>{count}</p>
       <button onClick={increase}>+</button>
-      <button onClick={onAdd}>Añadir al Carrito</button>
+      <button onClick={() => onAdd(count)}>Añadir al Carrito</button>
     </ItemContainer>  
   )
 }
