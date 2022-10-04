@@ -15,8 +15,6 @@ const ItemDetail = ({ listProduct }) => {
     setIsAdded(true);
   }
 
-  console.log(cartList);
-
   return (
     <Container>
       <div className='divContainer'>
@@ -27,7 +25,12 @@ const ItemDetail = ({ listProduct }) => {
         <h4>{listProduct.title}</h4>
         <p>{listProduct.description}</p>
         <p className='price'>Precio: ${listProduct.price}</p>
-        {isAdded ? <NavLink to='/cart'><button>Ir al Carrito</button></NavLink> : <ItemCount initial={1} stock={10} onAdd={onAdd}/>}  
+        {isAdded 
+          ? 
+            <NavLink to='/cart'><button>Ir al Carrito</button></NavLink> 
+          : 
+            <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+        }  
       </div> 
     </Container>
     
@@ -43,6 +46,9 @@ const Container = styled.div`
   align-items: center;
   .divContainer {
     width: 40%;
+    @media (max-width: 830px) {
+      width: 70%;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;

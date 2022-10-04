@@ -51,12 +51,14 @@ const NavContainer = styled.nav`
     a {
         text-decoration: none;
         color: #FF6701;
-        margin-right: 1rem;
+        @media (min-width: 768px){
+            margin-right: 1rem;
+        }
     }
     h1 {
         text-align: center;
     }
-    @media (min-width: 769px) {
+    @media (min-width: 768px) {
         div {
             display: flex;
             flex-flow: row wrap;
@@ -76,12 +78,12 @@ const NavContainer = styled.nav`
         margin-right: auto;
         text-align: center;
         transition: all .5s ease;
-        a{
+        a {
             color: #FF6701;
             font-size: 2rem;
             display: block;
         }
-        @media(min-width: 768px) {
+        @media (min-width: 768px) {
             position: initial;
             margin: 0;
             a {
@@ -91,7 +93,7 @@ const NavContainer = styled.nav`
             }
         }
     }
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
         .links.active{
             width: 100%;
             display: block;
@@ -102,7 +104,7 @@ const NavContainer = styled.nav`
             left: 0;
             right:0;
             text-align: center;
-            a{
+            a {
                 font-size: 1.5rem;
                 color: #FF6701;
                 margin-top: 2.2rem;
@@ -117,16 +119,16 @@ const NavContainer = styled.nav`
 `
 
 const BgDiv = styled.div`
-    background: #333;
-    position: fixed;
+    background-color: #333;
+    position: relative;
     top: -800px;
     width: 0;
     height: 100%;
-    z-index:-1;
+    z-index: -1;
     transition: all .6s ease;
     @media(max-width: 768px) {
         &.active {
-            border-radius: 0 0 10% 10%;
+            border-radius: 0 0 5% 5%;
             top: 0;
             width: 100%;
             height: 50%;
