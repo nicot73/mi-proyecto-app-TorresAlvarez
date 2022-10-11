@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import Loader from '../Loader';
 import styled from 'styled-components';
-import { products } from '../../utils/products';
-import { customFetch } from '../../utils/customFetch';
 import { useParams } from 'react-router-dom';
+import { db } from '../../firebase/firebase';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -15,40 +15,32 @@ const ItemListContainer = ({ greeting }) => {
   let { category } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    customFetch(products)
-      .then(res => {
-        if (category) {
-          setLoading(false);
-          setListProducts(res.filter(prod => prod.category === category));
-        } else {
-          setLoading(false);
-          setListProducts(res);
+
+    const productsCollection = collection(db, 'products');
+    const productCategory = query(productsCollection, where('category', '==', `${category}`));
+
+    let url = (category === undefined ? productsCollection : productCategory)
+
+    getDocs(url)
+    .then((data) => {
+
+      const list = data.docs.map((product) => {
+        return {
+          ...product.data(),
+          id: product.id
         }
       })
+      setListProducts(list);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
+      console.error("Error:", err);
+    })
+    .finally(() => {
+      setLoading(false);
+    })
+
   },[category])
-
-  /*useEffect(() => {
-
-    const getItem = async () => {
-
-      try {
-        const res = await fetch(IdCategory ? `${urlCategory}/${IdCategory}` : `${urlBase}`);
-        const data = await res.json();
-        setListProducts(data);
-      }
-      catch(err) {
-        console.log("Error:", err);
-        console.error("Error:", err);
-      }
-      finally {
-        setLoading(false);
-      }
-    }
-
-    getItem();
-
-  },[IdCategory])*/
 
   return (
     <DivContainer>
