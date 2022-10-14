@@ -3,6 +3,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Table, TableContainer, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import { useCartContext } from '../../context/CartContext';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const CartView = () => {
 
@@ -47,6 +48,7 @@ export const CartView = () => {
           <button onClick={cleanCart}>Vaciar carrito</button>
         </>
       }
+      <Link to='/form'><button>Siguiente</button></Link>
     </CartContainer>
   )
 }
