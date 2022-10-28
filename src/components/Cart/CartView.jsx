@@ -45,10 +45,12 @@ export const CartView = () => {
         :
         <>
           <p className='price'>Precio Total: ${totalPrice()}</p>
-          <button onClick={cleanCart}>Vaciar carrito</button>
+          <div className='divButtons'>
+            <button onClick={cleanCart}>Vaciar carrito</button>
+            <Link to='/form'><button>Continuar compra</button></Link>
+          </div>
         </>
       }
-      <Link to='/form'><button>Siguiente</button></Link>
     </CartContainer>
   )
 }
@@ -122,6 +124,11 @@ const CartContainer = styled.div`
   button:hover {
     background-color: #FF6701;
     color: #333;
+  }
+
+  .divButtons {
+    display: flex;
+    flex-flow: row wrap;
   }
 
   .price, .msj {

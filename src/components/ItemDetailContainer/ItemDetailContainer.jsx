@@ -10,6 +10,7 @@ const ItemDetailContainer = () => {
 
     const [listProduct, setListProduct] = useState({});
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     const { id } = useParams();
 
@@ -29,9 +30,9 @@ const ItemDetailContainer = () => {
           }
         )
       })
-      .catch((err) => {
-        console.log("Error:", err);
-        console.error("Error:", err);
+      .catch((error) => {
+        console.error(error);
+        setError('Lo sentimos, no encontramos ese producto.');
       })
       .finally(() => {
         setLoading(false);

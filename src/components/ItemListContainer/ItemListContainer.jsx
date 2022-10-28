@@ -5,12 +5,14 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore';
+import '../InsertFont.css';
 
 
 const ItemListContainer = ({ greeting }) => {
 
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   let { category } = useParams();
 
@@ -32,9 +34,9 @@ const ItemListContainer = ({ greeting }) => {
       })
       setListProducts(list);
     })
-    .catch((err) => {
-      console.log("Error:", err);
-      console.error("Error:", err);
+    .catch((error) => {
+      console.error(error);
+      setError('Lo sentimos, no encontramos ese producto.');
     })
     .finally(() => {
       setLoading(false);
@@ -58,9 +60,13 @@ const DivContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
   .msj {
     margin-bottom: 20px;
+    font-family: "GrandGalaxy";
     font-size: 1.5rem;
+    font-style: italic;
     font-weight: bold;
+    text-align: center;
   }
 `

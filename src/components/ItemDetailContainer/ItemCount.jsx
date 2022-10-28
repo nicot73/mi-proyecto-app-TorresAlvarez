@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import swal from 'sweetalert';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
 
@@ -8,13 +9,24 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     const increase = () => count < stock && setCount(count + 1);
     const decrease = () => count > initial && setCount(count - 1);
 
+    const controlStock = (count, stock) => {
+      if (stock === 0) {
+        swal({
+          title: "Lo sentimos.",
+          text: "Sin Stock disponible",
+          icon: "error",
+        });
+      } else {
+        onAdd(count);
+      }
+    }
 
   return (
     <ItemContainer>
       <button onClick={decrease}>-</button>
       <p>{count}</p>
       <button onClick={increase}>+</button>
-      <button onClick={() => onAdd(count)}>Añadir al Carrito</button>
+      <button onClick={() => controlStock(count, stock)}>Añadir al Carrito</button>
     </ItemContainer>  
   )
 }
@@ -43,6 +55,7 @@ const ItemContainer = styled.div`
     background-color: #FF6701;
     color: #333;
   }
+
   p {
     background-color: #666;
     padding: 8px;

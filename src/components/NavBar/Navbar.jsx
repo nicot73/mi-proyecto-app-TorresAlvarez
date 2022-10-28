@@ -33,7 +33,8 @@ const Navbar = () => {
                 <div className='burger'>
                     <BurgerButton clicked={clicked} handleClick={handleClick}/>
                 </div>
-                <BgDiv className={`links ${clicked ? 'active' : ''}`}></BgDiv>    
+
+                <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
             </NavContainer>
         </>    
     )
@@ -42,7 +43,7 @@ const Navbar = () => {
 export default Navbar;
 
 const NavContainer = styled.nav`
-    padding: .2rem;
+    padding: .5rem;
     background-color: #222;
     color: #FF6701;
     display: flex;
@@ -72,8 +73,6 @@ const NavContainer = styled.nav`
     .links {
         position: absolute;
         top: -1000px;
-        left: 0;
-        right: 0;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -91,6 +90,7 @@ const NavContainer = styled.nav`
                 color: #FF6701;
                 display: inline;
             }
+
         }
     }
     @media (max-width: 768px) {
@@ -100,10 +100,11 @@ const NavContainer = styled.nav`
             position: absolute;
             margin-left: auto;
             margin-right: auto;
-            top: 12%;
+            top: 15%;
             left: 0;
             right:0;
             text-align: center;
+            z-index: 2;
             a {
                 font-size: 1.5rem;
                 color: #FF6701;
@@ -112,6 +113,8 @@ const NavContainer = styled.nav`
         }
     }
     .burger {
+        z-index: 2;
+
         @media(min-width: 768px) {
             display: none;
         }
@@ -119,19 +122,22 @@ const NavContainer = styled.nav`
 `
 
 const BgDiv = styled.div`
-    background-color: #333;
-    position: relative;
-    top: -800px;
-    width: 0;
+    background-color: transparent;
+    position: fixed;
+    top: -1000px;
+    width: 100%;
     height: 100%;
     z-index: -1;
-    transition: all .6s ease;
+    transition: all .6s ease-in-out;
+    
     @media(max-width: 768px) {
         &.active {
-            border-radius: 0 0 5% 5%;
+            background-color: #333;
+            left: 0;
             top: 0;
             width: 100%;
-            height: 50%;
+            height: 100%;
+            z-index: 1;
         } 
     }
 `

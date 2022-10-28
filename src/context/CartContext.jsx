@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 
 const CartContext = createContext([]);
 
@@ -6,7 +6,7 @@ export const useCartContext = () => useContext(CartContext);
 
 export function CartContextProvider({ children }) {
 
-    const [cartList, setCartList] = useState([]);
+    const [cartList, setCartList] = useState(JSON.parse(localStorage.getItem('Cart')) || []);
 
     const isInCart = (id) => cartList.find(prod => prod.id === id);
 
@@ -27,7 +27,12 @@ export function CartContextProvider({ children }) {
         }
     }
 
-    const removeProduct = (id) => setCartList(cartList.filter(prod => prod.id != id));
+    useEffect(() => {
+        localStorage.setItem("Cart", JSON.stringify(cartList));
+    }, [cartList])
+    
+
+    const removeProduct = (id) => setCartList(cartList.filter(prod => prod.id !== id));
 
     const cleanCart = () => setCartList([]);
 
