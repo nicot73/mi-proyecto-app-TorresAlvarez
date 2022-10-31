@@ -27,7 +27,7 @@ const Navbar = () => {
                 </div>
 
                 <NavLink to={'/cart'}>
-                    <CartWidget />
+                    <CartWidget/>
                 </NavLink>
                 
                 <div className='burger'>
@@ -55,6 +55,14 @@ const NavContainer = styled.nav`
         @media (min-width: 768px){
             margin-right: 1rem;
         }
+    }
+    a:hover {
+        color: #FF6701;
+        text-shadow: 0 0 5px #FF6701, 0 0 25px #FF6701, 0 0 50px #FF6701, 0 0 100px #FF6701;
+    }
+    a.active {
+        color: #FF6701;
+        text-shadow: 0 0 5px #FF6701, 0 0 5px #FF6701, 0 0 10px #FF6701, 0 0 15px #FF6701,  0 0 25px #FF6701; 
     }
     h1 {
         text-align: center;

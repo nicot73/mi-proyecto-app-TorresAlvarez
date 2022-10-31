@@ -16,13 +16,13 @@ export const CartView = () => {
           <TableHead className='headTable'>
             <TableRow>
               <TableCell align="center" className='headTitle displayNone'></TableCell>
-              <TableCell align="center" className='headTitle'>Producto:</TableCell>
-              <TableCell align="center" className='headTitle'>Cantidad:</TableCell>
-              <TableCell align="center" className='headTitle'>Precio:</TableCell>
-              <TableCell align="center" className='headTitle'>Eliminar Producto:</TableCell>
+              <TableCell align="center" className='headTitle'>Producto</TableCell>
+              <TableCell align="center" className='headTitle'>Cantidad</TableCell>
+              <TableCell align="center" className='headTitle'>Precio</TableCell>
+              <TableCell align="center" className='headTitle'>Eliminar Producto</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className='bodyTable'>
             {cartList.map(prod => 
               <TableRow key={prod.id}>
                 <TableCell align="center" className='displayNone'>
@@ -84,6 +84,10 @@ const CartContainer = styled.div`
     @media (max-width: 768px) {
       font-size: 0.75rem;
     }
+  }
+
+  .bodyTable {
+    background-color: white;
   }
 
   .bodyFont {

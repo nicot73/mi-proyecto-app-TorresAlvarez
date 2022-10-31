@@ -17,6 +17,7 @@ const Item = ({ product }) => {
 export default Item;
 
 const CardContainer = styled.div`
+  background-color: white;
   width: 330px;
   height: 430px;
   border: solid 1px #e9e9e9;

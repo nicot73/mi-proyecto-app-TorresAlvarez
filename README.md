@@ -1,8 +1,45 @@
-Este proyecto está basado en un E-Commerce utilizando las herramientas de react para hacerlo dinamico a la hora de navegar en la web.
+# Proyecto E-Commerce Tienda Gamer
 
-Se utilizaron frameworks como:
--MaterialUI para insertar iconos
--Styled-Components para dar estilos
--React-router-dom para utilizar herramientas como el useParams()
+Mi nombre es Nicolás Torres, este proyecto presenta el desarrollo de un E-commerce de una tienda ficticia de productos de computacion/gamer.
 
-Se utilizo un archivo products.js con un array de productos para realizar la simulacion del funcionamiento de la web.
+---------------------------------------------------
+## Objetivo
+
+Desarrollar un e-commerce que simule la realidad utilizando React JS para presentarlo como proyecto final del Curso React JS de CoderHouse.
+
+---------------------------------------------------
+## Screenshots
+####Home Tienda Gamer
+
+![Imagen](./public/screenShot/homeTiendaGamer.png)
+
+####Detail Tienda Gamer
+![Imagen](./public/screenShot/detailContainerTiendaGamer.png)
+
+####Cart Tienda Gamer
+![Imagen](./public/screenShot/cartViewTiendaGamer.png)
+
+####Form Tienda Gamer
+![Imagen](./public/screenShot/formTiendaGamer.png)
+
+---------------------------------------------------
+## 🛠 Tecnologias Utilizadas
+
+| Parameter  | Type                       |
+| :--------  | :-------                   |
+| HTML       | `Estructura y maquetación` |
+| CSS        | `Estética y diseño`        |
+| JavaScript | `Programación de funciones del e-commerce` |
+| React.js   | `Interfaz de usuario (SPA)`|
+| Node.js    | `Ejecución de JavaScript`  |
+| Git        | `Control de versiones y repositorio` |
+| Styled Components | `Librería de estilos para CSS` |
+| Material Icons UI | `Libreria de iconos`|
+| React Router DOM | `Navegacion entre componentes`|
+| Firebase | `Base de datos personalizada del proyecto`|
+
+---------------------------------------------------
+##Links
+
+[Link al Repositorio](https://github.com/nicot73/mi-proyecto-app-TorresAlvarez)
+[Link a la Web](https://tiendagamer-nt.netlify.app/)

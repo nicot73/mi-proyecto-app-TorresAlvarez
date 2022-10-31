@@ -79,29 +79,29 @@ export const Form = () => {
       <h2>Completa el formulario</h2>
 
       <div className='divForm'>
-        <label htmlFor="name">Nombre:</label>
+        <label htmlFor="name">Nombre</label>
         <input type="text" onChange={handleName}/>
 
-        <label htmlFor="surname">Apellido:</label>
+        <label htmlFor="surname">Apellido</label>
         <input type="text" onChange={handleSurname}/>
 
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email</label>
         <input type="email" onChange={handleEmail}/>
 
-        <label htmlFor="phone">Telefono:</label>
+        <label htmlFor="phone">Telefono</label>
         <input type="number" onChange={handlePhone}/>
 
-        <label htmlFor="location">Localidad:</label>
+        <label htmlFor="location">Localidad</label>
         <input type="text" onChange={handleLocation}/>
 
-        <label htmlFor="direction">Direccion:</label>
+        <label htmlFor="direction">Direccion</label>
         <input type="text" onChange={handleDirection}/>
       </div>
 
       <div className='divButtons'>
         {loadForm === false
           ? 
-            <button onClick={handleClick}>Confirmar Datos</button>
+            <button type='submit' onClick={handleClick}>Confirmar Datos</button>
           : 
             <Link to='/'><button onClick={checkOut}>Finalizar Compra</button></Link>
         } 
@@ -111,7 +111,7 @@ export const Form = () => {
   )
 }
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,7 +128,7 @@ const FormContainer = styled.div`
   }
 
   input {
-    width: 250px;
+    width: 400px;
     height: 25px;
     margin-bottom: 10px;
   }
@@ -151,6 +151,7 @@ const FormContainer = styled.div`
   }
 
   .divForm {
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;

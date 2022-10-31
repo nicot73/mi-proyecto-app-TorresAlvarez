@@ -51,6 +51,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   .divContainer {
+    background-color: white;
     width: 40%;
     @media (max-width: 830px) {
       width: 70%;
