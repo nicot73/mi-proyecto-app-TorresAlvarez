@@ -9,17 +9,17 @@ Desarrollar un e-commerce que simule la realidad utilizando React JS para presen
 
 ---------------------------------------------------
 ## Screenshots
-####Home Tienda Gamer
+#### Home Tienda Gamer
 
 ![Imagen](./public/screenShot/homeTiendaGamer.png)
 
-####Detail Tienda Gamer
+#### Detail Tienda Gamer
 ![Imagen](./public/screenShot/detailContainerTiendaGamer.png)
 
-####Cart Tienda Gamer
+#### Cart Tienda Gamer
 ![Imagen](./public/screenShot/cartViewTiendaGamer.png)
 
-####Form Tienda Gamer
+#### Form Tienda Gamer
 ![Imagen](./public/screenShot/formTiendaGamer.png)
 
 ---------------------------------------------------
@@ -39,7 +39,7 @@ Desarrollar un e-commerce que simule la realidad utilizando React JS para presen
 | Firebase | `Base de datos personalizada del proyecto`|
 
 ---------------------------------------------------
-##Links
+## Links
 
 * Link del repositorio: [Repositorio](https://github.com/nicot73/mi-proyecto-app-TorresAlvarez)
 
