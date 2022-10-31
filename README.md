@@ -25,7 +25,7 @@ Desarrollar un e-commerce que simule la realidad utilizando React JS para presen
 ---------------------------------------------------
 ## 🛠 Tecnologias Utilizadas
 
-| Parameter  | Type                       |
+| Tecnologia | Uso                        |
 | :--------  | :-------                   |
 | HTML       | `Estructura y maquetación` |
 | CSS        | `Estética y diseño`        |
