@@ -41,5 +41,6 @@ Desarrollar un e-commerce que simule la realidad utilizando React JS para presen
 ---------------------------------------------------
 ##Links
 
-[Link al Repositorio](https://github.com/nicot73/mi-proyecto-app-TorresAlvarez)
-[Link a la Web](https://tiendagamer-nt.netlify.app/)
+* Link del repositorio: [Repositorio](https://github.com/nicot73/mi-proyecto-app-TorresAlvarez)
+
+* Link a la Web: [Tienda Gamer](https://tiendagamer-nt.netlify.app/)
